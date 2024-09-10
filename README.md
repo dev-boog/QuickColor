@@ -1,6 +1,6 @@
 # QuickColor
 
-QuickColor is A C++ program that detects and retrieves the color under the user's cursor in real-time .By capturing the screen pixel where the mouse pointer is located, the program is able to get the exact color value (RGB) and display it.
+QuickColor is A C++ program that detects and retrieves the color under the user's cursor in real-time. By capturing the screen pixel where the mouse pointer is located, the program is able to get the exact color value (RGB) and display it.
 
 ## Features:
 - Real-time detection of the color under the mouse cursor
