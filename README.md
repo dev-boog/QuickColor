@@ -9,4 +9,4 @@ QuickColor is A C++ program that detects and retrieves the color under the user'
 - Compatible with Windows (or whichever OS you designed for, adjust accordingly)
 
 ## Images
-- Main user interface![QuickColor](https://cdn.discordapp.com/attachments/1278830368585158798/1283160942951268393/imgui_application_IfQd28DL5p.png?ex=66e1fc40&is=66e0aac0&hm=a885c8160ddb8d28d3c4da421b819c1f398fc0c74b3ae5a0fbb10bf3b8dd308b&)
+- ![QuickColor](https://cdn.discordapp.com/attachments/1278830368585158798/1283160942951268393/imgui_application_IfQd28DL5p.png?ex=66e1fc40&is=66e0aac0&hm=a885c8160ddb8d28d3c4da421b819c1f398fc0c74b3ae5a0fbb10bf3b8dd308b&)
