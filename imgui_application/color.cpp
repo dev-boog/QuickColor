@@ -3,6 +3,7 @@
 #include <windows.h>
 
 #include "color.h"
+#include "menu.h"
 #include "imgui/imgui.h"
 
 extern int color::r = NULL;
@@ -12,7 +13,7 @@ extern int color::b = NULL;
 void color::copy_color()
 {
 	const std::string rgb = std::to_string(color::r) + "," + std::to_string(color::g) + "," + std::to_string(color::b);
-	std::cout << rgb << std::endl;
+	menu::saved_rgb.push_back(rgb);
 
 	OpenClipboard(NULL);
 	EmptyClipboard();
@@ -32,8 +33,10 @@ void color::thread()
 {
 	while (1)
 	{
-		if (GetAsyncKeyState(VK_RBUTTON))
+		if (GetAsyncKeyState(VK_RBUTTON) & 1)
+		{
 			color::copy_color();
+		}
 			
 		POINT cursor_pos;
 		HDC hDC = GetDC(NULL);

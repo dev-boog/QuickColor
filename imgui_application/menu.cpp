@@ -10,6 +10,8 @@
 #include <windows.h>
 
 extern bool menu::active = true;
+extern bool menu::debug_console = true;
+extern std::vector<std::string> menu::saved_rgb = { };
 
 class initWindow
 {
@@ -51,7 +53,7 @@ void load_styles()
 
 void menu::render()
 {
-    ImVec4 Col = ImColor(color::r, color::g, color::b);
+    ImVec4 col = ImColor(color::r, color::g, color::b);
     ImGuiIO& io = ImGui::GetIO(); (void)io;
 
     if (!iw.styles_loaded)
@@ -60,11 +62,22 @@ void menu::render()
     if (menu::active)
     {
         ImGui::SetNextWindowBgAlpha(1.0f);
-        // ImGui::SetNextWindowSize(iw.window_size);
         ImGui::Begin(iw.window_title, &menu::active, iw.window_flags);
         {
             ImGui::Text("Right click to copy the hovered colors RGB value.");
-            ImGui::ColorEdit4("##picker", (float*)&Col);
+            ImGui::ColorEdit4("##picker", (float*)&col);
+
+            ImGui::Separator();
+            
+            ImGui::Text("Colors grabbed this session:");
+            if (menu::saved_rgb.size() == 0)
+                ImGui::TextDisabled("No colors have been grabbed this session.");
+            for (int count = 0; count < menu::saved_rgb.size(); count++)
+            {
+                ImGui::TextDisabled("[%d]", (count + 1));
+                ImGui::SameLine();
+                ImGui::Text(menu::saved_rgb[count].c_str());          
+            }
         }
         ImGui::End();
     }

@@ -99,7 +99,7 @@ void window::render()
     HWND hwnd = ::CreateWindow(wc.lpszClassName, _T("QuickColor"), WS_OVERLAPPEDWINDOW, 0, 0, 50, 50, NULL, NULL, wc.hInstance, NULL);
 
     // Hide console window
-    ::ShowWindow(::GetConsoleWindow(), SW_HIDE);
+    ::ShowWindow(::GetConsoleWindow(), menu::debug_console);
 
     // Init Direct3d
     if (!CreateDeviceD3D(hwnd))
